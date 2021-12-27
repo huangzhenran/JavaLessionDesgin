@@ -3,10 +3,13 @@ package lessionDesign;
 public class Test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-   //  login login=new login();
+		
+		 DBManager dbManager=new DBManager();
+		//连接数据库
+	       dbManager.getConnection();  
 		
        logintest tLogintest=new logintest();
+        tLogintest.loginInterface();
        
 	}
 

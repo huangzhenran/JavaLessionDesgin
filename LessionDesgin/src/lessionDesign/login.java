@@ -19,7 +19,7 @@ import com.sun.javafx.geom.AreaOp.AddOp;
 
 public class login {
 
-	public login() {
+	public static void main(String[] args) {
 		 JFrame jf=new JFrame("窗口2");
 		 JTextField account,password;
 		 
@@ -46,17 +46,29 @@ public class login {
 	   
 	     
 	     JLabel label=new JLabel();
-	        ImageIcon icon=new ImageIcon("image\\nami.jpg");
+	        ImageIcon icon=new ImageIcon("source\\image\\nami.jpg");
 	        Image image=icon.getImage();
 	        image=image.getScaledInstance(1200, 800, image.SCALE_DEFAULT);
 	        icon.setImage(image);
 	        label.setIcon(icon);
 	        
-	       // jf.add(label);
-	        jf.setLayout(new GridLayout(2,1));
-	        jf.add(jp1);
-	        jf.add(jp2);
+	      JPanel myPanel=new JPanel();
+		
+			label.setBounds(0, 0, icon.getIconWidth(), icon.getIconHeight());	//把标签设置为和图片等高等宽
+			myPanel = (JPanel)jf.getContentPane();		//把我的面板设置为内容面板
+			myPanel.setOpaque(false);					//把我的面板设置为不可视
+			myPanel.setLayout(new FlowLayout());		//把我的面板设置为流动布局
+			jf.getLayeredPane().setLayout(null);		//把分层面板的布局置空
+			myPanel.add(account);						//把按钮添加到我的面板里
+			jf.getLayeredPane().add(label, new Integer(Integer.MIN_VALUE));		//把标签添加到分层面板的最底层
+		
 	        
+	      
+	        //jf.setLayout(new GridLayout(2,1));
+	       // jf.add(jp1);
+	       // jf.add(jp2);
+	        
+			
 	        jf.setSize(1200,800);
 		     jf.setLayout(new FlowLayout());
 		     jf.setLocation(350, 150);
