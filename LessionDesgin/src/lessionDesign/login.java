@@ -46,7 +46,7 @@ public class login {
 	   
 	     
 	     JLabel label=new JLabel();
-	        ImageIcon icon=new ImageIcon("source\\image\\nami.jpg");
+	        ImageIcon icon=new ImageIcon("source\\image\\1.jpg");
 	        Image image=icon.getImage();
 	        image=image.getScaledInstance(1200, 800, image.SCALE_DEFAULT);
 	        icon.setImage(image);

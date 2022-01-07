@@ -1,6 +1,9 @@
 package lessionDesign;
 
 
+import java.awt.BorderLayout;
+import java.awt.Button;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
@@ -22,8 +25,11 @@ public class ManagementCenter extends JFrame {
 		 b1=new JButton("学生信息管理");
 	     b2=new JButton("课程管理");
 	     b3=new JButton("教师信息管理");
+	    // b4=new JButton("");
 	     
-	     
+	     b1.setPreferredSize(new Dimension(100,40));
+	     b2.setPreferredSize(new Dimension(100,40));
+	     b3.setPreferredSize(new Dimension(100,40));
 	     
 	      b1.setFont(font);
 	      b2.setFont(font);
@@ -34,6 +40,7 @@ public class ManagementCenter extends JFrame {
 	     p1.add(b1);
 	     p1.add(b2);
 	     p1.add(b3);
+	   
 	    this.add(p1);
 	    
 	    b1.addActionListener(new ActionListener() {

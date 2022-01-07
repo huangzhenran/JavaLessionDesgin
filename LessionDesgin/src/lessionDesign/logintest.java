@@ -2,6 +2,8 @@ package lessionDesign;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
@@ -22,7 +24,7 @@ public class logintest  {
 	
 	//定义组件 
 	JFrame jFrame = new  JFrame();
-    JTextField account,password;//输入学生基本信息得文本
+    static JTextField account,password;//输入学生基本信息得文本
     JPasswordField password1;
     JRadioButton 男,女;//声明单选项对象，性别选择
     ButtonGroup group=null;//声明按钮组
@@ -40,7 +42,7 @@ public class logintest  {
 	    group.add(男);//把按钮添加到按钮组
 	    group.add(女);
 	    Blogin=new JButton("登陆");//创建按钮对象
-	 
+	    Blogin.setPreferredSize(new Dimension(100,40));
 	       
 	    Font font = new Font("宋体", Font.PLAIN, 25);//创建1个字体实例
 	    
@@ -69,11 +71,11 @@ public class logintest  {
 	    pv.add(p6);
 	    pv.add(p1);//把面板放到容器中,add()代表容器
 	    pv.add(p2);
-
+       // pv.add(Blogin);
 	           
 	    ph=new JPanel();      
 	    ph.add(Blogin);
-
+	      
 	    Blogin.addActionListener(new ActionListener() {
 			
 			@SuppressWarnings("deprecation")
@@ -98,10 +100,10 @@ public class logintest  {
 
 	    Container con=jFrame.getContentPane();//建立容器对象con,取得容器面板
 	    con.setLayout(new BorderLayout());//设置布局为边框布局，边框布局分东南西北中5个方位来添加控件。
-	    //若没有指定方位，将添加到中间，上下左右都可以扩展
-	  
-	    con.add(pv, BorderLayout.NORTH);//pv在中间
-	    con.add(ph, BorderLayout.SOUTH);//ph在南边
+	    //若没有指定方位，将添加到中间，上下左右都可以扩展 
+		con.add(pv, BorderLayout.NORTH);//pv在中间
+	    con.add(ph, BorderLayout.CENTER);//ph在南边
+	    
 	    jFrame.setLocation(350,150);
 	    jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//置一个默认的关闭操作，也就是你的JFrame窗口的关闭按钮，点击它时，退出程序
 	    //jf.setBounds(100,100,900,450);//setBounds(x,y,width,height); x:组件在容器X轴上的起点 y:组件在容器Y轴上的起点 width:组件的长度 height:组件的高度
